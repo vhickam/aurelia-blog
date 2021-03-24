@@ -1,0 +1,32 @@
+<template>
+  <section class="au-animate post-details">
+    <h2 class="heading">${heading}</h2>
+    <div class="row au-stagger justify-content-center post-main mt-5 mb-5">
+      <div class="col-md-8">
+        <article class="blog-post p-5">
+          <h2 class="blog-post-title">${postDetails.title}</h2>
+          <p class="blog-post-meta">
+            Written by
+            <a
+              route-href="route: author-details; params.bind: {id: postAuthorDetails.id}"
+              >${postAuthorDetails.name}</a
+            >
+          </p>
+          <p>${postDetails.body}</p>
+        </article>
+      </div>
+    </div>
+    <div class="row justify-content-center post-comments">
+      <div class="col-md-8">
+        <h4>Comments</h4>
+        <hr />
+        <row repeat.for="comment of postComments">
+          <div class="pl-2">
+            <h6>${comment.name}</h6>
+            <p>${comment.body}</p>
+          </div>
+        </row>
+      </div>
+    </div>
+  </section>
+</template>

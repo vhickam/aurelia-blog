@@ -1,0 +1,28 @@
+<template>
+  <section>
+    <h2>${heading}</h2>
+    <div class="row au-stagger">
+      <div
+        class="col-sm-6 col-md-3 user-card-container au-animate"
+        repeat.for="author of authors"
+      >
+        <div class="user-card">
+          <div class="content">
+            <p class="name">${author.name}</p>
+            <p class="site">
+              Website:
+              <a target="_blank" href="${author.website}"> ${author.website}</a>
+            </p>
+            <p>
+              <a
+                class="btn btn-default"
+                route-href="route: author-details; params.bind: {id: author.id}"
+                >More Details</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
